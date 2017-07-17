@@ -1,0 +1,22 @@
+name: ASR
+main: ZtechNetwork\Minecraft\AutoServerRestart\Loader
+version: 2.0.2
+api: [1.12.0]
+load: STARTUP
+author: ZtechNetwork
+description: Restarts your server at given interval.
+website: https://github.com/LeronDoesGM
+commands:
+ asr:
+  description: "Set ASR Time"
+  permission: asr.command.asr
+ restart:
+  description: "Check ASR Status"
+  permission: asr.command.restart
+permissions:
+ asr.command.asr:
+  description: "Usage: /asr <value>"
+  default: op
+ asr.command.restart:
+  description: "Usage: /restart"
+  default: true
