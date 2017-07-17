@@ -154,7 +154,7 @@ class Loader extends PluginBase{
 			$this->getServer()->getLogger()->info(TextFormat::YELLOW . "[ASR] Applying Configurations [...]");
 			@mkdir($this->getDataFolder(), 0777, true);
 			$this->preferences = new Config($this->getDataFolder() . "config.yml", Config::YAML);
-			$this->preferences->set("Version", "2.0.1");
+			$this->preferences->set("Version", "3.0.0-beta1");
 			$this->preferences->set("TimeToRestart", 30);
 			$this->preferences->set("Prefix", "[ASR]");
 			$this->preferences->set("Logger_DB", false);
@@ -171,18 +171,18 @@ class Loader extends PluginBase{
 			$this->preferences = new Config($this->getDataFolder() . "config.yml", Config::YAML);
 			$version = $this->preferences->get("Version");
 			$checker = $this->preferences->get("Logger_DB");
-			if($version !== "2.0.1" and $version == "2.0.0"){
+			if($version !== "3.0.0-beta1" and $version == "2.0.2"){
 				$this->getServer()->getLogger()->info(TextFormat::YELLOW . "[ASR] It Seems you're using v$version of ASR.");
-				$this->getServer()->getLogger()->info(TextFormat::YELLOW . "[ASR] Applying Configuration Updates for v2.0.1 [...]");
-				$this->preferences->set("Version", "2.0.1");
+				$this->getServer()->getLogger()->info(TextFormat::YELLOW . "[ASR] Applying Configuration Updates for v3.0.0-beta1 [...]");
+				$this->preferences->set("Version", "3.0.0-beta1");
 				$this->preferences->set("Logger_DB", false);
 				$this->preferences->save();
 				$this->getServer()->getLogger()->info(TextFormat::GREEN . "[ASR] Done!");
 			}else{
-				if($version !== "2.0.1" and $version !== "2.0.0"){
+				if($version !== "3.0.0-beta1" and $version !== "2.0.2"){
 					$this->getServer()->getLogger()->info(TextFormat::YELLOW . "[ASR] It Seems you're using an older version of ASR.");
 					$this->getServer()->getLogger()->info(TextFormat::YELLOW . "[ASR] Applying Configuration Updates [...]");
-					$this->preferences->set("Version", "2.0.1");
+					$this->preferences->set("Version", "3.0.0-beta1");
 					$this->preferences->set("TimeToRestart", 30);
 					$this->preferences->set("Prefix", "[ASR]");
 					$this->preferences->set("Logger_DB", false);
@@ -192,7 +192,7 @@ class Loader extends PluginBase{
 			}
 			if($checker == true){
 				$this->getServer()->getLogger()->info(TextFormat::BLUE . "[ASR] You have Logger ENABLED, please use");
-				$this->getServer()->getLogger()->info(TextFormat::AQUA . "[ASR] the proper MySQL Server info otherwise plugin wont work.");
+				$this->getServer()->getLogger()->info(TextFormat::AQUA . "[ASR] The proper MySQL Server info otherwise plugin wont work.");
 			}else{
 				$this->getServer()->getLogger()->info(TextFormat::RED . "[ASR] Logger is DISABLED.");
 			}
