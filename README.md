@@ -1,6 +1,6 @@
 # AutoServerRestart
 Automatically Restarts your PocketMine server over a given interval.
-Orginal Plugin by [iJoshuaHD](https://github.com/iJoshuaHD)
+Original Plugin by [iJoshuaHD](https://github.com/iJoshuaHD)
 
 ### TODO
 - Automatically reconnect the client
