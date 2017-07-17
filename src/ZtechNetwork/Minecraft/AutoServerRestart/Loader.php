@@ -150,19 +150,20 @@ class Loader extends PluginBase{
 	
 	public function loadConfigurations(){
 		if(!file_exists($this->getDataFolder())){
-			$this->getServer()->getLogger()->info(TextFormat::YELLOW . "[ASR] It Seems you're new in using ASR.");
+			$this->getServer()->getLogger()->info(TextFormat::YELLOW . "[ASR] This is your first time running this plugin!");
 			$this->getServer()->getLogger()->info(TextFormat::YELLOW . "[ASR] Applying Configurations [...]");
 			@mkdir($this->getDataFolder(), 0777, true);
 			$this->preferences = new Config($this->getDataFolder() . "config.yml", Config::YAML);
 			$this->preferences->set("Version", "3.0.0-beta1");
 			$this->preferences->set("TimeToRestart", 30);
+			$this->preferences->set("AutoReconnect", false);
 			$this->preferences->set("Prefix", "[ASR]");
-			$this->preferences->set("Logger_DB", false);
+			$this->preferences->set("Logger_DB", true);
 			$this->preferences->save();
 			$this->getServer()->getLogger()->info(TextFormat::AQUA . "[ASR] Note: Logger is disabled by default.");
-			$this->getServer()->getLogger()->info(TextFormat::BLUE . "[ASR] You can Enable it by editing the config.yml");
+			$this->getServer()->getLogger()->info(TextFormat::BLUE . "[ASR] You can enable it in the config.yml");
 			$this->getServer()->getLogger()->info(TextFormat::AQUA . "[ASR] If you have enabled Logger, please");
-			$this->getServer()->getLogger()->info(TextFormat::BLUE . "[ASR] use the proper MySQL Server info otherwise plugin wont work.");
+			$this->getServer()->getLogger()->info(TextFormat::BLUE . "[ASR] Use the proper MySQL Server info otherwise the plugin wont work.");
 			$this->getServer()->getLogger()->info(TextFormat::GREEN . "[ASR] Done!");
 		}else{
 		/*	This would be useful when I make some further updates e.g. Multi Lingual Support. 
@@ -175,15 +176,16 @@ class Loader extends PluginBase{
 				$this->getServer()->getLogger()->info(TextFormat::YELLOW . "[ASR] It Seems you're using v$version of ASR.");
 				$this->getServer()->getLogger()->info(TextFormat::YELLOW . "[ASR] Applying Configuration Updates for v3.0.0-beta1 [...]");
 				$this->preferences->set("Version", "3.0.0-beta1");
-				$this->preferences->set("Logger_DB", false);
+				$this->preferences->set("Logger_DB", true);
 				$this->preferences->save();
 				$this->getServer()->getLogger()->info(TextFormat::GREEN . "[ASR] Done!");
 			}else{
 				if($version !== "3.0.0-beta1" and $version !== "2.0.2"){
-					$this->getServer()->getLogger()->info(TextFormat::YELLOW . "[ASR] It Seems you're using an older version of ASR.");
+					$this->getServer()->getLogger()->info(TextFormat::YELLOW . "[ASR] You're using an older version of ASR.");
 					$this->getServer()->getLogger()->info(TextFormat::YELLOW . "[ASR] Applying Configuration Updates [...]");
 					$this->preferences->set("Version", "3.0.0-beta1");
 					$this->preferences->set("TimeToRestart", 30);
+					$this->preferences->set("AutoReconnect", false);
 					$this->preferences->set("Prefix", "[ASR]");
 					$this->preferences->set("Logger_DB", false);
 					$this->preferences->save();
@@ -192,9 +194,9 @@ class Loader extends PluginBase{
 			}
 			if($checker == true){
 				$this->getServer()->getLogger()->info(TextFormat::BLUE . "[ASR] You have Logger ENABLED, please use");
-				$this->getServer()->getLogger()->info(TextFormat::AQUA . "[ASR] The proper MySQL Server info otherwise plugin wont work.");
+				$this->getServer()->getLogger()->info(TextFormat::AQUA . "[ASR] The proper MySQL Server info otherwise the plugin wont work.");
 			}else{
-				$this->getServer()->getLogger()->info(TextFormat::RED . "[ASR] Logger is DISABLED.");
+				$this->getServer()->getLogger()->info(TextFormat::RED . "[ASR] Logger is DISABLED. To enable, please enable it in the config.yml");
 			}
 		}
 		if(!file_exists($this->getDataFolder() . "connector.yml")){
