@@ -1,0 +1,7 @@
+---
+Version: 3.0.0-beta1
+TimeToRestart: 30
+AutoReconnect: false
+Prefix: '[ASR]'
+Logger_DB: false
+...
