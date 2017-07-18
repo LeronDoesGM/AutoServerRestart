@@ -7,7 +7,7 @@ Original Plugin by [iJoshuaHD](https://github.com/iJoshuaHD)
 
 ### Latest Changelog (Version 3.0.0-beta1)
 - Plugin no longer crashes the server for PocketMine-MP
-- You can now enable the fuction to to automatically reconnect to server(WIP)
+- You can now enable the fuction to to automatically reconnect to server(Will not do anything yet)
 - API bumped to API 3.0.0-ALPHA7
 
 ### Download
