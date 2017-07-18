@@ -4,4 +4,5 @@ branches:
 projects:
   AutoServerRestart:
     path: ""
+    icon: "asr_icon.png"
 ...
