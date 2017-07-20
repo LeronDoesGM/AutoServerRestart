@@ -124,7 +124,7 @@ class Loader extends PluginBase{
 	public function count_down($seconds){
 		if($seconds == 1){
 			foreach($this->getServer()->getOnlinePlayers() as $p){
-				$p->kick("Server Restart");
+				$p->kick("The Server has been restarted, we will be back shortly!");
 			}
 			$this->getServer()->shutdown();
 			return;
@@ -154,7 +154,7 @@ class Loader extends PluginBase{
 			$this->getServer()->getLogger()->info(TextFormat::YELLOW . "[ASR] Applying Configurations [...]");
 			@mkdir($this->getDataFolder(), 0777, true);
 			$this->preferences = new Config($this->getDataFolder() . "config.yml", Config::YAML);
-			$this->preferences->set("Version", "3.0.0-beta1");
+			$this->preferences->set("Version", "3.0.0-beta2");
 			$this->preferences->set("TimeToRestart", 30);
 			$this->preferences->set("AutoReconnect", false);
 			$this->preferences->set("Prefix", "[ASR]");
@@ -172,18 +172,18 @@ class Loader extends PluginBase{
 			$this->preferences = new Config($this->getDataFolder() . "config.yml", Config::YAML);
 			$version = $this->preferences->get("Version");
 			$checker = $this->preferences->get("Logger_DB");
-			if($version !== "3.0.0-beta1" and $version == "2.0.2"){
+			if($version !== "3.0.0-beta2" and $version == "3.0.0-beta1"){
 				$this->getServer()->getLogger()->info(TextFormat::YELLOW . "[ASR] It Seems you're using v$version of ASR.");
 				$this->getServer()->getLogger()->info(TextFormat::YELLOW . "[ASR] Applying Configuration Updates for v3.0.0-beta1 [...]");
-				$this->preferences->set("Version", "3.0.0-beta1");
+				$this->preferences->set("Version", "3.0.0-beta2");
 				$this->preferences->set("Logger_DB", false);
 				$this->preferences->save();
 				$this->getServer()->getLogger()->info(TextFormat::GREEN . "[ASR] Done!");
 			}else{
-				if($version !== "3.0.0-beta1" and $version !== "2.0.2"){
+				if($version !== "3.0.0-beta2" and $version !== "3.0.0-beta1"){
 					$this->getServer()->getLogger()->info(TextFormat::YELLOW . "[ASR] You're using an older version of ASR.");
 					$this->getServer()->getLogger()->info(TextFormat::YELLOW . "[ASR] Applying Configuration Updates [...]");
-					$this->preferences->set("Version", "3.0.0-beta1");
+					$this->preferences->set("Version", "3.0.0-beta2");
 					$this->preferences->set("TimeToRestart", 30);
 					$this->preferences->set("AutoReconnect", false);
 					$this->preferences->set("Prefix", "[ASR]");
