@@ -1,6 +1,6 @@
 name: AutoServerRestart
 main: ZtechNetwork\Minecraft\AutoServerRestart\Loader
-version: 3.0.0-beta1
+version: 3.0.0-beta2
 api: [3.0.0-ALPHA7]
 load: STARTUP
 author: ZtechNetwork
@@ -17,6 +17,6 @@ permissions:
  asr.command.asr:
   description: "Usage: /asr <value>"
   default: op
- asr.command.restart:
+ asr.command.asrtime:
   description: "Usage: /asrtime"
   default: true
