@@ -38,7 +38,7 @@ class Loader extends PluginBase{
     public function onEnable(){
 		//Commands
 		$this->getCommand("asr")->setExecutor(new Commands($this));
-		$this->getCommand("restart")->setExecutor(new Commands($this));
+		$this->getCommand("asrtime")->setExecutor(new Commands($this));
 		//Task
 		$this->initial_start(2); //its obviously 1 sec but idk why xD
 		//Load Config
