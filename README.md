@@ -5,10 +5,8 @@ Original Plugin by [iJoshuaHD](https://github.com/iJoshuaHD)
 ### TODO
 - Automatically reconnect the client
 
-### Latest Changelog (Version 3.0.0-beta1)
-- Plugin no longer crashes the server for PocketMine-MP
-- You can now enable the fuction to to automatically reconnect to server(Will not do anything yet)
-- API bumped to API 3.0.0-ALPHA7
+### Latest Changelog (Version 3.0.0-beta2)
+- Removed support for API 3.0.0-ALPHA1-6
 
 ### Download
 To download the latest version, go [here](https://github.com/LeronDoesGM/AutoServerRestart/releases)
