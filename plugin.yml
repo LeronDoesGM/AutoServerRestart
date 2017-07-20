@@ -10,13 +10,13 @@ commands:
  asr:
   description: "Set ASR Time"
   permission: asr.command.asr
- restart:
+ asrtime:
   description: "Check ASR Status"
-  permission: asr.command.restart
+  permission: asr.command.asrtime
 permissions:
  asr.command.asr:
   description: "Usage: /asr <value>"
   default: op
  asr.command.restart:
-  description: "Usage: /restart"
+  description: "Usage: /asrtime"
   default: true
